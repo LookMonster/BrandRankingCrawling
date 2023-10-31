@@ -5,7 +5,6 @@ import scala.collection.mutable.ListBuffer
 
 object ReadCsv {
   def main(args: Array[String]): Unit = {
-    // 반환용 리스트
     val brands = new ListBuffer[String]()
     var br: BufferedReader = null
 
@@ -14,14 +13,11 @@ object ReadCsv {
       var line: String = null
 
       while ({line = br.readLine(); line} != null) {
-        // CSV 행을 저장하는 문자열
         val array: Array[String] = line.split(",")
-        // Brand 열의 데이터만 가져옴 (인덱스 0)
         val brand: String = array(0)
         brands += brand
       }
 
-      // Brand 리스트 출력
       for (brand <- brands) {
         println(brand)
       }
